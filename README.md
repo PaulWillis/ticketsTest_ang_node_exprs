@@ -27,3 +27,9 @@ Each branch represents a certain tutorial.
 Happy Asdf-ing!dd
 
 ![Todasdfasdfc](http://i.imgur.com/n.png)
+
+###Helpful links
+- [updating files in github](https://learn.sparkfun.com/tutorials/using-github-to-share-with-sparkfun/committing-pushing-and-pulling)
+
+- [adding an existing github repository using the command line](https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/)
+
