@@ -2,7 +2,7 @@
 
 A demonstration app built with Node,  Angular and Node Express
 
-
+##testq
 ## Requirements
 
 - [Node and npm](http://nodejs.org)
@@ -16,7 +16,7 @@ A demonstration app built with Node,  Angular and Node Express
 
 ## Tutorial Series
 
-This repo corresponds asdf asdf asdf asdf orial Series on [scotch.io](http://)
+This repo corresponds asdf asdf asdf asdf orial Series on [scotch.io](http://scotch.io)
 
 Each branch represents a certain tutorial.
 - tut3-auth: Coming Soon
