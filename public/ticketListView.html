@@ -21,12 +21,24 @@
         <table class="table" ng-controller="TicketListCtrl as vm">
             <thead>
                 <tr>
-                    <td><span class="tableheader">reportNum</span></td>
+                    <td><span class="tableheader">ReportNum</span></td>
+                    <td><span class="tableheader">ReportedTrouble</span></td>
+                    <td><span class="tableheader">AccountCode</span></td>
+                    <td><span class="tableheader">Name</span></td>
+                    <td><span class="tableheader">Address</span></td>
+                    <td><span class="tableheader">City</span></td>
+                    <td><span class="tableheader">Group</span></td>
                 </tr>
             </thead>
             <tbody>
                 <tr ng-repeat="i in vm.tickets">
-                    <td>{{i.reportNum}}</td>
+                  <td>{{i.reportNum}}</td>
+                  <td>{{i.reportedTrouble}}</td>
+                  <td>{{i.accountNumber}}</td>
+                  <td>{{i.accountName}}</td>
+                  <td>{{i.billingAddress}}</td>
+                  <td>{{i.billingCity}}</td>
+                  <td>{{i.accountGroup}}</td>
                 </tr>
             </tbody>
         </table>

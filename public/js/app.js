@@ -27,6 +27,13 @@ console.log('running app.js');
                             templateUrl: "productListView.html",
                             controller: "ProductListCtrl as vm"
                         })
+                        
+                        //Tickets
+                        .state("ticketList_state", {
+                            url: "/tickets",
+                            templateUrl: "ticketListView.html",
+                            controller: "TicketListCtrl as vm"
+                        })
                     }
             ])
 

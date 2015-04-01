@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1"><!-- Optimize mobile viewport -->
 
-	<title>Node/Angular Todo App</title>
+	<title>Ticket App</title>
 
 	<style>
 		html 					{ overflow-y:scroll; }
@@ -20,10 +20,13 @@
 	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular-touch.js"></script>
 	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular-animate.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.13/angular-ui-router.min.js"></script>
+	<script src="http://cdn.rawgit.com/angular-ui/ui-grid.info/gh-pages/release/3.0.0-rc.20/ui-grid.min.js"></script>
+
 
 		<!-- SCROLLS -->
 		<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"><!-- load bootstrap -->
 		<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+		<link rel="stylesheet" href="/http://cdn.rawgit.com/angular-ui/ui-grid.info/gh-pages/release/3.0.0-rc.20/ui-grid.min.css"></script>
 
 	<script src="js/controllers/main.js"></script>
 	<script src="js/services/todos.js"></script>
@@ -33,14 +36,17 @@
 
     <!--Product Controllers-->
     <script src="js/controllers/productListCtrl.js"></script>
+    <script src="js/controllers/ticketListCtrl.js"></script>
     <!--Services-->
     <script src="js/services/common.services.js"></script>
     <script src="js/services/productResource.js"></script>
+    <script src="js/services/ticketResource.js"></script>
 
 </head>
 <body   ng-app="scotchTodo">
- 
+
 			<a data-ui-sref="productList_state">Product List</a>
+			<a data-ui-sref="ticketList_state">Ticket List</a>
 	        <div data-ui-view></div>
 
 
