@@ -8,8 +8,19 @@
 
     function ticketResource($resource) {
         console.log('in ticketResource line9');
-        return $resource("http://10.0.6.147/TicketWebService/api/Tickets/:id")
+        return $resource("http://10.0.6.147/TicketWebServicePOCO/api/Tickets/:id")
     }
+
+    function UserService() {
+        console.log('in UserService');
+        return {
+            loading : true
+        };
+    }
+
+
+
+
 
 
 }());

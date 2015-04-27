@@ -13,6 +13,10 @@
 		#todo-form 	 			{ margin-bottom:50px; }
 	</style>
 
+
+  <!--Style sheets--> 
+  <link href="css/app.css" rel="stylesheet" />
+
 	<!-- SPELLS -->
 	<script src="http://code.jquery.com/jquery-latest.js"></script>
 	<script src="https://code.angularjs.org/1.3.9/angular.min.js"></script>
@@ -26,10 +30,14 @@
 		<!-- SCROLLS -->
 		<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"><!-- load bootstrap -->
 		<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
-		<link rel="stylesheet" href="/http://cdn.rawgit.com/angular-ui/ui-grid.info/gh-pages/release/3.0.0-rc.20/ui-grid.min.css"></script>
+		<link rel="stylesheet" href="/http://cdn.rawgit.com/angular-ui/ui-grid.info/gh-pages/release/3.0.0-rc.20/ui-grid.min.css">
+		<link rel="stylesheet" href="/http://cdn.rawgit.com/angular-ui/ui-grid.info/gh-pages/release/3.0.0-rc.20/ui-grid.min.css">
 
-	<script src="js/controllers/main.js"></script>
-	<script src="js/services/todos.js"></script>
+
+
+
+		<script src="js/controllers/main.js"></script>
+		<script src="js/services/todos.js"></script>
 
 	<!-- <script src="js/core.js"></script> -->
 	<script src="js/app.js"></script>
@@ -37,6 +45,7 @@
     <!--Product Controllers-->
     <script src="js/controllers/productListCtrl.js"></script>
     <script src="js/controllers/ticketListCtrl.js"></script>
+    <script src="js/controllers/ticketDetailCtrl.js"></script>
     <!--Services-->
     <script src="js/services/common.services.js"></script>
     <script src="js/services/productResource.js"></script>
@@ -45,7 +54,7 @@
 </head>
 <body   ng-app="scotchTodo">
 
-			<a data-ui-sref="productList_state">Product List</a>
+			<!-- <a data-ui-sref="productList_state">Product List</a>  -->
 			<a data-ui-sref="ticketList_state">Ticket List</a>
 	        <div data-ui-view></div>
 

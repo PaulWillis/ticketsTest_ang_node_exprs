@@ -1,7 +1,7 @@
  	<div ng-app="scotchTodo">
           <a data-ui-sref="home_state">home_state</a>
 
-     <div class="panel panel-primary">
+    <div class="panel panel-primary">
     <div class="panel-heading" style="font-size:large">
         Ticket List
     </div>
@@ -18,6 +18,13 @@
                 font-weight: bold;
             }
         </style>
+
+        <div  ng-controller="TicketListCtrl as vm">
+    				<p class="text-center" ng-show="vm.loading">
+    					<span class="fa fa-spinner fa-spin fa-3x"></span>
+    				</p>
+        </div>
+
         <table class="table" ng-controller="TicketListCtrl as vm">
             <thead>
                 <tr>
@@ -32,7 +39,10 @@
             </thead>
             <tbody>
                 <tr ng-repeat="i in vm.tickets">
-                  <td>{{i.reportNum}}</td>
+                  <td><button ng-click="vm.submit(i)" onClick="this.disabled=true;" >close {{i.reportNum}}</button></td>
+                  <td>
+                        <a data-ui-sref="ticketDetail_state({id: i.reportNum})"> {{ i.reportNum}}</a>
+                    </td>
                   <td>{{i.reportedTrouble}}</td>
                   <td>{{i.accountNumber}}</td>
                   <td>{{i.accountName}}</td>
@@ -42,9 +52,12 @@
                 </tr>
             </tbody>
         </table>
-        <div>
-        <div id="grid1" ui-grid="{ data: vm.tickets  }" class="grid"></div>
-        </div>
+
+        <!--
+          <div>
+          <div id="grid1" ui-grid="{ data: vm.tickets  }" class="grid"></div>
+          </div>
+        -->
 
         </div>
 </div>

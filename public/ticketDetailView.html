@@ -1,0 +1,233 @@
+
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+
+  <div class="container" >
+    <div class="panel panel-primary" style="padding:10px" ng-init="names=['Jani','Hege','Kai']">
+
+      <div ng-include="'partialMenu.html'"  ></div>
+
+
+      <div class="panel-heading" style="font-size:large" >
+        {{vm.title}}
+      </div>
+
+
+      <br/>
+      <button class="btn btn-primary" ng-click="vm.submit(vm.ticket)" onClick="this.disabled=true;" >Close {{vm.ticket.reportNum}}</button>
+      <br/>
+
+      <div class="row">
+        <div class="col-md-4">
+
+            Subscriber Information</br>
+            Name:<b> {{vm.ticket.accountName}} </b>  Status:{{vm.ticket.accountStatus}} </br>
+            Account: #: {{vm.ticket.accountNumber}}  Phone:  </br>
+            Address: {{vm.ticket.billingAddress}} </br>
+            City: {{vm.ticket.billingCity}} </br>
+            State: SOUTH CAROLINA</br>
+            Postal Code: 29020</br>
+        </div><!-- <div class="col-md-4"> -->
+        <div class="col-md-4">
+
+            Reported By: {{vm.ticket.reportedBy}}</br>
+            Can Be Reached: {{vm.ticket.canBeReached}}</br>
+            Time Due: {{vm.ticket.timeDue}}</br>
+            Create Time: {{vm.ticket.createTime}}</br>
+            Reported Trouble: {{vm.ticket.reportedTrouble}}</br>
+            Type: {{vm.ticket.type}}</br>
+            Account Group: {{vm.ticket.accountGroup}}</br>
+            Create By: {{vm.ticket.createBy}}</br>
+            Service Id: {{vm.ticket.srvService_ServiceID}}</br>
+            Circuit Id: {{vm.ticket.circuiT_Id}}</br>
+            Address Id: {{vm.ticket.addresS_Id}} </br>
+
+
+        </div>
+
+      </div>
+
+
+
+
+
+      <button type="button" class="btn btn-default" aria-label="Left Align">
+          <span class="glyphicon glyphicon-tasks" aria-hidden="true"></span>
+      </button>
+
+
+              <div class="row">
+                  <div class="col-md-4">
+
+
+      <div class="table-responsive">
+      <table class="table table-bordered table-striped table-hover table-condensed">
+          <thead>
+              <tr>
+                  <th><a ng-click="sort='childComponent'; reverse=!reverse">Component</a></th>
+                  <th><span class="tableheader">AltPhone</span></th>
+                  <th><span class="tableheader">ParentComponent</span></th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr ng-repeat="j in vm.ticket.components | filter:query | orderBy:sort:reverse ">
+                <td><small>{{j.childComponent}}</small></td>
+                <td><small>{{j.altPhone}}</small></td>
+                <td><small>{{j.parentComponent}}</small></td>
+              </tr>
+          </tbody>
+      </table>
+    </div>
+
+      </div><!-- <div class="col-md-4"> -->
+
+
+<!-- BEGIN http://stackoverflow.com/questions/10349395/bootstrap-form-layout-the-correct-way   -->
+
+        <a href="#" data-toggle="modal" data-target="#modalName">Some Link Here</a>
+<div class="modal fade" id="modalName" tabindex="-1" role="dialog" aria-labelledby="modalName" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Some Header Here</h4>
+    </div>
+    <div class="modal-body">
+        <div class="container center-block">
+            <form class="form-horizontal" name="formName" action="" method="POST">
+                <fieldset>
+
+                    <!-- Name input-->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="tokenName">Name</label>
+                        <div class="col-md-6">
+                            <input id="name" name="name" type="text" placeholder="Name" class="form-control">
+                        </div>
+                    </div>
+
+                    <!-- URL input-->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="url">URL</label>
+                        <div class="col-md-6">
+                            <input id="url" name="url" type="text" placeholder="http://somedomain.com" class="form-control">
+                        </div>
+                    </div>
+
+                    <!-- Entity Association -->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="associationId">Association</label>
+                        <div class="col-md-6">
+                            <select class="form-control" id="associationId" name="associationId">
+                                <option>Choose an Association</option>
+                                <option value="1">Programming</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Message body -->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="description">Description</label>
+                        <div class="col-md-6">
+                            <textarea class="form-control" id="description" name="description" placeholder="Please enter your description here..." rows="5"></textarea>
+                        </div>
+                    </div>
+
+                    <!-- Form actions -->
+                    <div class="form-group">
+                        <div class="col-md-10 text-right">
+                            <button type="submit" value="Submit" class="btn btn-primary btn-lg">Save</button>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+
+<!-- END http://stackoverflow.com/questions/10349395/bootstrap-form-layout-the-correct-way   -->
+
+          <div class="col-md-6">
+
+
+                      <div class="table-responsive">
+                      <table class="table table-bordered table-striped table-hover table-condensed">
+                          <thead>
+                              <tr>
+                                  <th><a ng-click="sort='promoteDate'; reverse=!reverse">Date</a></th>
+                                  <th><span class="tableheader">Summary</span></th>
+                                  <th><span class="tableheader">Note</span></th>
+                              </tr>
+                          </thead>
+                          <tbody>
+                              <tr ng-repeat="j in vm.ticket.workflowItems | filter:query | orderBy:sort:reverse ">
+                                <td><small>{{j.promoteDate | date:'yyyy'   }}</small></td>
+                                <td><small>{{j.summaryName}}</small></td>
+                                <td><small>{{j.itemComment}}</small></td>
+                              </tr>
+                          </tbody>
+                      </table>
+                    </div>
+
+
+          </div><!-- <div class="col-md-4"> -->
+      </div>
+
+
+      <div class="row">
+          <div class="col-md-8">
+            <ul id="CommentList">
+                  <li ng-repeat=" j in vm.ticket.comments" ng-bind-html-unsafe="opt.text">
+                        <ul id="comments">
+                          <li>
+                            {{j.createDate}} <p> {{j.text}} </p>
+                          </li>
+                      </ul>
+
+
+                  </li>
+              </ul>
+            </div>
+        </div>
+
+       <!--
+           <li ng-repeat="j in i.comments" ng-bind-html-unsafe="opt.text">
+           -->
+
+
+
+
+
+          <div class="panel-footer">
+          <!-- <div class="panel-footer" ng-controller="TicketDetailCtrl as vm"> -->
+              <a class="btn btn-default"
+                 data-ui-sref="ticketList_state"
+                 style="width:80px">
+                  <i class="glyphicon glyphicon-chevron-left"></i>
+                  Back
+              </a>
+              <a class="btn btn-default"
+                 data-ui-sref="ticketEdit({id: vm.ticket.id})"
+                 style="width:80px">
+                  <i class="glyphicon glyphicon-chevron-left"></i>
+                  Edit
+              </a>
+          </div>
+
+
+
+
+
+
+
+
+
+
+    </div>
+
+
+
+</div>

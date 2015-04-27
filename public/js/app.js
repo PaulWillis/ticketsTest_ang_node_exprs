@@ -18,7 +18,7 @@ console.log('running app.js');
                 $stateProvider
                         .state("home_state", {
                             url: "/",
-                            templateUrl: "todoListView.html"
+                            templateUrl: "ticketListView.html"
                         })
 
                         //Products
@@ -27,13 +27,38 @@ console.log('running app.js');
                             templateUrl: "productListView.html",
                             controller: "ProductListCtrl as vm"
                         })
-                        
+
                         //Tickets
                         .state("ticketList_state", {
                             url: "/tickets",
                             templateUrl: "ticketListView.html",
                             controller: "TicketListCtrl as vm"
                         })
+
+
+                        //Detail
+                        .state("ticketDetail_state", {
+                            url: "/tickets/:id",
+                            templateUrl: "ticketDetailView.html",
+                            controller: "TicketDetailCtrl as vm",
+                            resolve: {
+                                ticketResource: "ticketResource",
+                                ticket: function (ticketResource, $stateParams) {
+                                    var id = $stateParams.id;
+                                     console.log('trying ticketResource -- id from $stateParam is:' + id);
+                                    return ticketResource.get({ id: id }).$promise; //get method returns a single item. note query seems to work with real data and get works with mock
+
+                                }
+                            }
+                        })
+
+
+
+
+
+
+
+
                     }
             ])
 
